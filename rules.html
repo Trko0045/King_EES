@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Afdelinger - EES FivePD</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        a, h2, h3 {
+            color: #4CAF50;
+        }
+        .wrapper {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .department {
+            background-color: #1a1a1a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .dept-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .dept-buttons a {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        
+/* Full-screen video background */
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video covers the entire screen */
+    z-index: -1; /* Sends video to the background */
+    background: #000; /* Fallback color for browsers that don't support video */
+}
+
+/* Allow scrolling */
+#page-wrapper {
+    position: relative;
+    z-index: 1; /* Ensure content stays above the video */
+    min-height: 100vh; /* Ensures enough height to scroll */
+    overflow: auto;
+}
+#backToTop {
+    display: block;
+    opacity: 0; /* Initially hidden */
+    position: fixed;
+    top: 30px; /* Position at the top for PC */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Offset the element to center it */
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 1%;
+    cursor: pointer;
+    font-size: 9px; /* Adjust font size for better visibility */
+    border: none;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none; /* Disable clicking when invisible */
+}
+
+#backToTop:hover {
+    background-color: #55a049;
+}
+
+@media (max-width: 600px) {
+    #backToTop {
+        top: auto; /* Remove the top positioning for small screens */
+        bottom: 30px; /* Position at the bottom for phones */
+        font-size: 9px; /* Slightly larger font size for readability */
+        padding: 4px 5px; /* Adjust padding for mobile */
+    }
+}
+
+
+    </style>
+</head>
+<body class="index is-preload">
+    <div id="page-wrapper">
+        
+        <!-- Video Background -->
+<video id="video-background" autoplay muted loop playsinline webkit-playsinline>
+    <source src="assets/videos/banner2.mp4" type="video/mp4">
+    <source src="assets/videos/banner2.webm" type="video/webm">
+    <source src="assets/videos/banner2.ogv" type="video/ogv">
+    Your browser does not support the video tag, but you can view our content in other formats.
+</video>
+
+
+        
+        <!-- Header -->
+        <header id="header" class="alt">
+            <h1 id="logo"><a href="index.html">EES FivePD</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">Hjem</a></li>
+                    <li class="current"><a href="rules.html">community regler</a></li>
+                    <li><a href="departments.html">afdelinger</a></li>
+                    <li><a href="status.html">uptime</a></li>
+                    <li><a href="about.html">om os</a></li>
+                    <li><a href="https://discord.gg/Sg6xEbeJXV" class="button">Join Discord</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <article id="main">
+            <header class="special container">
+                <h2>📜 Community Regler</h2>
+                <p>For at sikre en positiv oplevelse for alle beder vi dig venligst om at sætte dig ind i vores regler. Uvidenhed om reglerne fritager dig ikke for ansvar.</p>
+            </header>
+            
+            <section class="wrapper container">
+                <div class="rules">
+                    <h3>🛑 Generelle Regler</h3>
+                    <p><strong>1. Realistisk RP:</strong> Optræd modent og realistisk. Kun troværdige køretøjer og ændringer. Ingen trolling, powergaming eller uautoriserede trafikstop.</p>
+                    <p><strong>1.2 Vold & RP Begrænsninger:</strong> Ingen RDM, VDM eller combat logging. Kun følgende roller er tilladt: LEO, Brand, EMS, Bugsering, Vej- og Byarbejde.</p>
+                    <p><strong>1.3 Respekt & Adfærd:</strong> Ingen racisme, sexisme, homofobi, trusler eller hadefuld tale. Ingen chikane mod Staff eller spillere.</p>
+                    <p><strong>1.4 RP Intent:</strong> Du skal have en reel intention om at deltage i RP og følge reglerne.</p>
+                </div>
+                
+                <div class="rules">
+                    <h3>⚖️ Specifikke Regler</h3>
+                    <p><strong>2.1 Dyr i RP:</strong> Kun K9-enheder er tilladt.</p>
+                    <p><strong>2.2 Kørsel & Flyvning:</strong> Skal være realistisk.</p>
+                    <p><strong>2.3 Våben:</strong> Kun LEO må bære skydevåben.</p>
+                    <p><strong>2.4 Træning:</strong> Kun skydebane, dykker- og pilottræning er tilladt.</p>
+                    <p><strong>2.5 Køretøjer:</strong> Brug kun F1/F6 addon-menuen. Militær- og pansrede køretøjer er forbudt.</p>
+                    <p><strong>2.6 Teleportering:</strong> Kun tilladt til stationer.</p>
+                    <p><strong>2.7 Tredjepartsprogrammer:</strong> Eksterne menuer, scripts, overlays eller exploits er forbudt.</p>
+                    <p><strong>2.8 Streaming:</strong> Stream sniping er forbudt. Regelbrud fanget i optagelser straffes.</p>
+                    <p><strong>2.9 Spam & Kommunikation:</strong> Ingen spam i tekstchat eller via mikrofon.</p>
+                    <p><strong>2.9.1 Sprog:</strong> Kommunikation skal være på dansk eller engelsk.</p>
+                    <p><strong>3.1 Brugernavne:</strong> Skal være passende - ingen stødende eller staff-relaterede navne.</p>
+                </div>
+<div>
+    <button id="backToTop">Tilbage til toppen ↑</button>
+
+    <script>
+        var backToTop = document.getElementById("backToTop");
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+                backToTop.style.opacity = "1";  // Make it visible
+                backToTop.style.pointerEvents = "auto"; // Enable clicking
+            } else {
+                backToTop.style.opacity = "0";  // Make it invisible
+                backToTop.style.pointerEvents = "none"; // Disable clicking
+            }
+        };
+
+        backToTop.onclick = function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+    </script>
+</div>
+                <div class="rules">
+                    <h3>🛠️ Staff Regler</h3>
+                    <p><strong>4.1 Lyt til Staff:</strong> Følg instruktioner fra Staff uden diskussion.</p>
+                    <p><strong>4.2 Ingen tagning af admins:</strong> Opret en ticket i stedet.</p>
+                    <p><strong>4.3 Endelige Beslutninger:</strong> Staffs beslutninger er endelige.</p>
+                </div>
+            </section>
+        </article>
+        
+        <!-- Footer -->
+        <footer id="footer">
+            <ul class="icons">
+                <li><a href="https://discord.gg/Sg6xEbeJXV" class="icon brands fa-discord"><span class="label">Discord</span></a></li>
+                <li><a href="#" class="icon brands fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; EES FivePD</li><li>Om os: <a href="about.html">EESFivePD</a></li>
+            </ul>
+        </footer>
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

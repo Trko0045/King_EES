@@ -1,0 +1,339 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Afdelinger - EES FivePD</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        a, h2, h3 {
+            color: #4CAF50;
+        }
+        .wrapper {
+            background-color: rgba(0, 0, 0, 0.7); /* Fully transparent */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .department {
+            background-color: #1a1a1a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .dept-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .dept-buttons a {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        
+/* Full-screen video background */
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video covers the entire screen */
+    z-index: -1; /* Sends video to the background */
+    background: #000; /* Fallback color for browsers that don't support video */
+}
+
+/* Allow scrolling */
+#page-wrapper {
+    position: relative;
+    z-index: 1; /* Ensure content stays above the video */
+    min-height: 100vh; /* Ensures enough height to scroll */
+    overflow: auto;
+}
+    .team-btn {
+        background-color: transparent;
+        color: white;
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+        text-align: left;
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .team-btn:hover {
+        background-color: #4CAF50;
+    }
+
+    .team-info {
+        display: none;
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+    }
+
+    .team-btn:focus + .team-info,
+    .team-btn.active + .team-info {
+        display: block;
+    }
+
+    @media (max-width: 600px) {
+        .team-btn {
+            font-size: 16px;
+        }
+    }
+#backToTop {
+    display: block;
+    opacity: 0; /* Initially hidden */
+    position: fixed;
+    top: 30px; /* Position at the top for PC */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Offset the element to center it */
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 1%;
+    cursor: pointer;
+    font-size: 9px; /* Adjust font size for better visibility */
+    border: none;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none; /* Disable clicking when invisible */
+}
+
+#backToTop:hover {
+    background-color: #55a049;
+}
+
+@media (max-width: 600px) {
+    #backToTop {
+        top: auto; /* Remove the top positioning for small screens */
+        bottom: 30px; /* Position at the bottom for phones */
+        font-size: 9px; /* Slightly larger font size for readability */
+        padding: 4px 5px; /* Adjust padding for mobile */
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <div id="page-wrapper">
+        <!-- Header -->
+        <header id="header" class="alt">
+            <h1 id="logo"><a href="index.html">EES FivePD</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">Hjem</a></li>
+                    <li><a href="rules.html">Community Regler</a></li>
+                    <li><a href="departments.html">Afdelinger</a></li>
+                    <li><a href="status.html">uptime</a></li>
+                    <li class="current"><a href="about.html">om os</a></li>
+                    <li><a href="https://discord.gg/Sg6xEbeJXV" class="button">Join Discord</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Video Background -->
+<video id="video-background" autoplay muted loop playsinline webkit-playsinline>
+    <source src="assets/videos/danceFD.mp4" type="video/mp4">
+    <source src="assets/videos/danceFD.webm" type="video/webm">
+    <source src="assets/videos/danceFD.ogv" type="video/ogv">
+    Your browser does not support the video tag, but you can view our content in other formats.
+</video>
+        
+        <!-- Main Content -->
+        <article id="main">
+            <header class="special container">
+                <h2>🔍 Om Os</h2>
+                <p>Hvem vi er, og hvad vi stræber efter.</p>
+            </header>
+            
+            <section class="wrapper container">
+<div class="section">
+    <h3>🌍 Hvem er vi?</h3>
+    <p>Vi er en gruppe passionerede moddere, der brænder for at skabe et stærkt fællesskab omkring FivePD og bringe autentiske udrykningskøretøjer fra Danmark og Europa til spillet.</p>
+    
+    <p>Gennem længere tid har vi ønsket at opleve realistiske udrykningskøretøjer, som vi kender fra hverdagen, i FivePD/FiveM – lidt ligesom LSPDFR, men nu i et fælles multiplayerunivers. Med FivePD har vi endelig muligheden for at skabe spændende og engagerende RP-scenarier på tværs af de danske beredskaber. Her kan vi træde ind i rollen som politi, brandfolk, paramedicinere, læger, vejhjælp, retsmedicinere, detektiver og meget mere.</p>
+    
+    <p>Dette projekt kan kun lykkes i fællesskab. Alle er velkomne – ikke kun som spillere, men også med idéer og feedback, så vi sammen kan udvikle og forbedre oplevelsen. Vi håber, at alle, der bliver en del af fællesskabet, vil nyde det lige så meget, som vi gør.</p>
+</div>
+<div class="section" style="text-align: center; margin: 30px 0;">
+    <h3>💖 Støt os</h3>
+    <p>Hvis du nyder vores arbejde og ønsker at støtte projektet, kan du donere via PayPal eller Ko-fi. Enhver donation går til at forbedre serveren og holde den kørende!</p>
+    
+    <div class="dept-buttons">
+        <a href="https://paypal.me/eesfivepd?country.x=DK&locale.x=da_DK" target="_blank">
+            <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_200x51.png" alt="Donate med PayPal" style="width: 90px; height: auto;">
+        </a>
+        
+        <a href="https://ko-fi.com/ees483645" target="_blank">
+            <img src="https://storage.ko-fi.com/cdn/brandasset/kofi_button_blue.png" alt="Support os på Ko-fi" style="width: 120px; height: auto;">
+        </a>
+    </div>
+</div>
+               <br> <br>
+			                  <br> <br>
+<div class="section" style="text-align: center; margin: 30px 0;">
+    <h3>👥 Teamet</h3>
+    
+    <div class="dept-buttons">
+
+    </div>
+</div>
+                
+<div class="section">
+    <h3></h3>
+    <div class="team-section">
+        <h3>👑 Owner</h3>
+        <ul>
+            <li>
+                <button class="team-btn">👤 @Nameless</button>
+                <div class="team-info">
+                    <a href="https://forum.cfx.re/u/janx740it" target="_blank">🔗 CFX Profile</a> | 
+                    <a href="https://www.youtube.com/@D1NO2AUR100" target="_blank">📺 YouTube</a> <br>
+                    Discord ID: 909513579508686938
+                </div>
+            </li>
+        </ul>
+
+        <h3>🔐 Administration</h3>
+        <ul>
+            <li>
+                <button class="team-btn">👤 @Kizo (Senior Staff)</button>
+                <div class="team-info">
+                    <a href="https://forum.cfx.re/u/Request_Lyricsvideo" target="_blank">🔗 CFX Profile</a> <br>
+                    Discord ID: 396703485057433600
+                </div>
+            </li>
+            <li>
+                <button class="team-btn">👤 @Green (Senior Staff)</button>
+                <div class="team-info">
+                    <em>No CFX profile</em> <br>
+                    Discord ID: 598882587791851520
+                </div>
+            </li>
+        </ul>
+
+        <h3>🔐 Moderation</h3>
+        <ul>
+            <li><button class="team-btn">👤 TBD</button></li>
+        </ul>
+
+        <h3>🛠️ Developers</h3>
+        <ul>
+    <li>
+        <button class="team-btn">👤 TBD</button>
+        <div class="team-info">
+        </div>
+        </ul>
+
+<h3>🌎 Social Media</h3>
+<ul>
+    <li>
+        <button class="team-btn">👤 Åbne Stillinger</button>
+        <div class="team-info">
+            <em><a href="https://dyno.gg/form/13b7b483" target="_blank">🔗 Ansøg Her</a></em> <br>
+        </div>
+    </li>
+        </ul>
+		
+<h3>👥 Trial Staff</h3>
+<ul>
+    <li>
+        <button class="team-btn">👤 TBD</button>
+        <div class="team-info">
+        </div>
+    </li>
+        </ul>
+
+        <h3>❤️ Supporters</h3>
+        <ul>
+            <button class="team-btn">👤 Donators & Supporters</button>
+                <div class="team-info">
+                    <em>Donator</em> <br>
+                    @Green
+               <br> <br>
+			   <br> <em>Supporter</em> <br>
+                </div>
+        </ul>
+<div>
+    <button id="backToTop">Tilbage til toppen ↑</button>
+
+    <script>
+        var backToTop = document.getElementById("backToTop");
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 1500) {
+                backToTop.style.opacity = "1";  // Make it visible
+                backToTop.style.pointerEvents = "auto"; // Enable clicking
+            } else {
+                backToTop.style.opacity = "0";  // Make it invisible
+                backToTop.style.pointerEvents = "none"; // Disable clicking
+            }
+        };
+
+        backToTop.onclick = function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+    </script>
+</div>
+
+                </div>
+            </section>
+        </article>
+        
+        <!-- Footer -->
+        <footer id="footer">
+            <ul class="icons">
+                <li><a href="#" class="icon brands fa-discord"><span class="label">Discord</span></a></li>
+                <li><a href="#" class="icon brands fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; EES FivePD</li><li>Om os: <a href="about.html">EESFivePD</a></li>
+            </ul>
+        </footer>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+	
+<script>
+    // JavaScript to handle button click and toggle information visibility
+    document.querySelectorAll('.team-btn').forEach(function(button) {
+        button.addEventListener('click', function() {
+            // Toggle 'active' class to show/hide the info
+            const info = this.nextElementSibling;
+            if (info.style.display === 'block') {
+                info.style.display = 'none';
+            } else {
+                info.style.display = 'block';
+            }
+        });
+    });
+</script>
+</body>
+</html>
