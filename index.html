@@ -8,63 +8,92 @@
     <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 <style>
+/* Background Styling */
 body {
-    background-image: url('images/banner.jpg'); /* Update to match your actual image path */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                      url('images/banner.jpg'); 
+    background-size: 99.8%; /* Zooms in */
+    background-position: 65% center; /* Moves image to the right */
+    background-attachment: fixed; /* Keeps static on desktop */
     background-repeat: no-repeat;
+    background-color: #121212; /* Fallback for very old browsers */
 }
 
-    /* Wrapping Content to Ensure Scrolling */
-    #page-wrapper {
-        position: relative;
-        z-index: 1; /* Ensures content stays above the background */
-        min-height: 100vh; /* Ensures enough height to scroll */
-        overflow-y: auto; /* Allows vertical scrolling */
+/* Ensure mobile compatibility */
+@media (max-width: 768px) {
+    body {
+        background-size: cover; /* Ensures full coverage on smaller screens */
+        background-position: center; /* Centers the image */
+        background-attachment: scroll; /* Fix for mobile devices */
     }
+}
+
+.special-alt {
+    width: 100%;
+    max-width: 1600px; /* Adjust to make it bigger */
+}
+
+
+/* Wrapping Content to Ensure Scrolling */
+#page-wrapper {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    overflow-y: auto;
+}
 
 /* Keep green color for titles */
 h2 {
-    color: #4CAF50; 
+    color: #4CAF50;
 }
 
-/* Make all other text white */
+/* all other text white */
 body, p, h1, h3, h4, h5, h6, li, span, a:not(h2) {
     color: #ffffff;
 }
-	
-	
 
-        .wrapper {
-            background-color: rgba(0, 0, 0, 0.7); /* Fully transparent */
-            padding: 20px;
-            border-radius: 10px;
-        }
+/* Wrapper for readability */
+.wrapper {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker for better contrast */
+    padding: 20px;
+    border-radius: 10px;
+}
 
-    #logo a {
-        color: #4CAF50;
-        font-weight: bold;
-    }
+/* Navigation and Logo Styling */
+#logo a {
+    color: #4CAF50;
+    font-weight: bold;
+}
 
-    #nav ul li a {
-        color: #4CAF50;
-    }
+#nav ul li a {
+    color: #4CAF50;
+}
 
-    .dropdown-content {
-        background-color: #00000;
-        color: #4CAF50;
-    }
+.dropdown-content {
+    background-color: #000;
+    color: #4CAF50;
+}
 
-    #footer {
-        background-color: #00000;
-    }
-	
+#footer {
+    background-color: #000;
+}
+
+/* FivePD Logo */
 .fivepd-logo {
-    width: 200px; /* Adjust size as needed */
+    width: 200px;
     height: auto;
     display: block;
-    margin: 0 auto 15px; /* Centers the logo */
+    margin: 0 auto 15px;
+}
+
+/* Mobile optimizations */
+@media (max-width: 600px) {
+    .wrapper {
+        padding: 15px; /* Less padding for smaller screens */
+    }
+    .fivepd-logo {
+        width: 150px; /* Smaller logo on mobile */
+    }
 }
 
 
