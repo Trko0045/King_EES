@@ -7,65 +7,69 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    <style>
-        body {
-            background-color: #121212;
-            color: #ffffff;
-        }
-        a, h2 {
-            color: #4CAF50;
-        }
+<style>
+body {
+    background-image: url('images/banner.jpg'); /* Update to match your actual image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+    /* Wrapping Content to Ensure Scrolling */
+    #page-wrapper {
+        position: relative;
+        z-index: 1; /* Ensures content stays above the background */
+        min-height: 100vh; /* Ensures enough height to scroll */
+        overflow-y: auto; /* Allows vertical scrolling */
+    }
+
+/* Keep green color for titles */
+h2 {
+    color: #4CAF50; 
+}
+
+/* Make all other text white */
+body, p, h1, h3, h4, h5, h6, li, span, a:not(h2) {
+    color: #ffffff;
+}
+	
+	
+
         .wrapper {
-            background-color: #1e1e1e;
+            background-color: rgba(0, 0, 0, 0.7); /* Fully transparent */
             padding: 20px;
             border-radius: 10px;
         }
-        #logo a {
-            color: #4CAF50;
-            font-weight: bold;
-        }
-        #nav ul li a {
-            color: #4CAF50;
-        }
-        .dropdown-content {
-            background-color: #000000;
-            color: #4CAF50;
-        }
-        #footer {
-            background-color: #000000;
-        }
-#backToTop {
-    display: block;
-    opacity: 0; /* Initially hidden */
-    position: fixed;
-    top: 30px; /* Position at the top for PC */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Offset the element to center it */
-    background-color: #4CAF50;
-    color: white;
-    padding: 8px 10px;
-    border-radius: 1%;
-    cursor: pointer;
-    font-size: 9px; /* Adjust font size for better visibility */
-    border: none;
-    transition: opacity 0.5s ease-in-out;
-    pointer-events: none; /* Disable clicking when invisible */
-}
 
-#backToTop:hover {
-    background-color: #55a049;
-}
-
-@media (max-width: 600px) {
-    #backToTop {
-        top: auto; /* Remove the top positioning for small screens */
-        bottom: 30px; /* Position at the bottom for phones */
-        font-size: 9px; /* Slightly larger font size for readability */
-        padding: 4px 5px; /* Adjust padding for mobile */
+    #logo a {
+        color: #4CAF50;
+        font-weight: bold;
     }
+
+    #nav ul li a {
+        color: #4CAF50;
+    }
+
+    .dropdown-content {
+        background-color: #00000;
+        color: #4CAF50;
+    }
+
+    #footer {
+        background-color: #00000;
+    }
+	
+.fivepd-logo {
+    width: 200px; /* Adjust size as needed */
+    height: auto;
+    display: block;
+    margin: 0 auto 15px; /* Centers the logo */
 }
 
-    </style>
+
+</style>
+
 </head>
 <body class="index is-preload">
     <div id="page-wrapper">
@@ -101,14 +105,19 @@
             </div>
         </section>
 
-        <!-- Main -->
-        <article id="main">
-            <header class="special container">
-                <span class="icon solid fa-shield-alt"></span>
-                <h2>Hvad er FivePD?</h2>
-                <p>FivePD er en omfattende Politisimulation i FiveM, hvor spillere kan arbejde sammen som politi.
-                Oplev realistiske missioner, patruljering og teamwork i en autentisk og dynamisk spilverden.</p>
-            </header>
+<!-- Main -->
+<article id="main">
+    <header class="wrapper style1 container special-alt">
+        <!-- Clickable FivePD Logo -->
+        <a href="https://fivepdmod.com" target="_blank">
+            <img src="https://fivepdmod.com/wp-content/uploads/2024/12/fivepdwhite.png" 
+                 alt="FivePD Logo" class="fivepd-logo">
+        </a>
+        <h2>Hvad er FivePD?</h2>
+        <p>​FivePD er en spændende multiplayer-lovhåndhævelsesmod til FiveM, inspireret af den populære singleplayer-mod LSPD:FR. Den giver spillere mulighed for at opleve spændingen ved at være politibetjent i et samarbejdsmiljø, perfekt til rollespil og teamwork. Uanset om det er patruljering på gaderne, respons på nødsituationer eller jagt på mistænkte, leverer FivePD en adrenalinfyldt oplevelse.
+Med dynamiske opkald, dybdegående tilpasning og spændende teamwork tilbyder FivePD en fordybende politisimulation. Spillere kan udføre realistiske trafikstop, engagere sig i jagter og arrestationer af AI-kontrollerede mistænkte og arbejde sammen med holdkammerater for at tackle udfordringer.
+FivePD er en omfattende politisimulation i FiveM, hvor spillere kan arbejde sammen som politi. Oplev realistiske missioner, patruljering og teamwork i en autentisk og dynamisk spilverden.</p>
+    </header>
 
             <!-- Features -->
             <section class="wrapper style1 container special-alt">
