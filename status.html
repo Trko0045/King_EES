@@ -250,7 +250,7 @@ body {
     <script>
         async function fetchServerStatus() {
             try {
-                const response = await fetch('https://servers-frontend.fivem.net/api/servers/single/j77bdl');
+                const response = await fetch('https://servers-frontend.fivem.net/api/servers/single/ovzbz7');
                 const data = await response.json();
                 if (data && data.Data) {
                     document.getElementById('server-status').innerHTML = "Online";
@@ -260,7 +260,7 @@ body {
                     button.classList.remove('offline');
                     button.classList.add('online');
                     button.innerHTML = "Spil Nu";
-                    button.href = "https://cfx.re/join/j77bdl"; // Link for the server to play now
+                    button.href = "https://cfx.re/join/8dylyb"; // Link for the server to play now
                 } else {
                     throw new Error("No data");
                 }
