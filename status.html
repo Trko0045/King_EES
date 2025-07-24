@@ -5,7 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/icon.png" />
+    <link rel="shortcut icon" href="favicon.ico" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 <style>
 body {
@@ -26,7 +27,7 @@ body {
     /* Wrapper */
     .wrapper {
         height: 50vh; /* Makes the wrapper cover the entire viewport height */
-        background-color: rgba(30, 30, 30, 0.7); /* More transparent to allow video to show through */
+        background-color: rgba(30, 35, 30, 0.9); /* More transparent to allow video to show through */
         padding: 40px 20px; /* Increased padding */
         border-radius: 10px;
         text-align: center;
@@ -114,10 +115,10 @@ body {
     }
 
     .status-buttons a.button {
-        padding: 10px 20px;
+        padding: 1px 2px;
         color: white;
         text-decoration: none;
-        border-radius: 5px;
+        border-radius: 1px;
         text-align: center;
         font-weight: bold;
     }
@@ -218,23 +219,45 @@ body {
             </div>
         </header>
 
-        <!-- Server Status -->
-        <section class="wrapper">
-            <h2>Server Status</h2>
-            <p>Live status for EES FivePD server</p>
-            <div class="status" id="server-status">Checking...</div>
-            <p id="player-count"></p>
-            
-            <!-- Button Section for server status -->
-            <div class="status-buttons">
-                <ul>
-                    <li>
-                        <a id="status-button" href="#" class="button">Checking...</a>
-                    </li>
-                </ul>
-            </div>
-        </section>
+<!-- Server Status -->
+<section class="wrapper" style="position: relative;">
+    <h2>Server Status</h2>
+    <p>Live status for EES FivePD server</p>
+    
+    <!-- Container to hold status text and logo overlay -->
+    <div style="position: relative; display: inline-block;">
+        <!-- The logo overlay -->
+        <img src="images/server_icon.png" alt="Server Icon" 
+             style="
+                 position: absolute;
+                 top: 80%;
+                 left: 50%;
+                 width: 160px;
+                 height: 150px;
+                 transform: translate(-50%, -80%);
+                 opacity: 1.00;
+                 pointer-events: none;
+                 z-index: 1;
+             ">
+        <!-- Status text on top -->
+        <div class="status" id="server-status" 
+             style="position: relative; z-index: 2; font-size: 24px; font-weight: bold; color: white;">
+             Checking...
+        </div>
     </div>
+    
+    <p id="player-count"></p>
+    
+    <!-- Button Section for server status -->
+    <div class="status-buttons">
+        <ul>
+            <li>
+                <a id="status-button" href="#" class="button">Checking...</a>
+            </li>
+        </ul>
+    </div>
+</section>
+
 
     <!-- Footer -->
     <footer id="footer">
