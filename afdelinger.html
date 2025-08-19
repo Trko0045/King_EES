@@ -1,0 +1,434 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>EES FivePD - Velkommen</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" type="image/png" sizes="96x96" href="images/icon.png" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+body {
+    background-color: #121212; /* Ensures a dark base */
+    background-image: url('assets/images/bannerdepartaments.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff;
+}
+        a, h2 {
+            color: #007bff;
+        }
+        .wrapper {
+            background-color: rgba(0, 0, 0, 0.85); /* Dark but slightly transparent */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        #logo a {
+            color: #007bff;
+            font-weight: bold;
+        }
+        #nav ul li a {
+            color: #007bff;
+        }
+        .dropdown-content {
+            background-color: #000000;
+            color: #007bff;
+        }
+        #footer {
+            background-color: #000000;
+        }  
+        .dept-buttons {
+            text-align: center;
+            margin-bottom: 40px;
+            margin-top: 20px;
+        }
+
+        .dept-buttons a {
+            display: inline-block;
+            background-color: transparent;
+            color: white;
+            padding: 100px 50px;
+            text-decoration: none;
+            border-radius: 15px;
+            margin: 0 20px;
+            width: 400px;  /* Set a fixed width for all buttons */
+            height: 175px; /* Set a fixed height for all buttons */
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .dept-buttons a:hover {
+            background-color: #003bff;
+        }
+
+        .dept-buttons a img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.5;
+            z-index: 1;
+        }
+
+        .dept-buttons a span {
+            position: relative;
+            z-index: 2;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 180px;  /* Center text vertically */
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            .dept-buttons a {
+                padding: 50px 25px;
+                width: 250px;  /* Adjust width for smaller devices */
+                height: 120px; /* Adjust height for smaller devices */
+            }
+            .dept-buttons a span {
+                font-size: 16px;
+                line-height: 120px;  /* Center text vertically */
+            }
+        }
+		/* Style for the video banner */
+.video-banner {
+    width: 100%;
+    height: 400px; /* Adjust as needed */
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.video-banner video {
+    object-fit: cover;  /* Ensures the video covers the area */
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .video-banner {
+        height: 290px;  /* Adjust video height for smaller screens */
+    }
+}
+#backToTop {
+    display: block;
+    opacity: 0; /* Initially hidden */
+    position: fixed;
+    top: 30px; /* Position at the top for PC */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Offset the element to center it */
+    background-color: #007bff;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 1%;
+    cursor: pointer;
+    font-size: 9px; /* Adjust font size for better visibility */
+    border: none;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none; /* Disable clicking when invisible */
+}
+
+#backToTop:hover {
+    background-color: #003bff;
+}
+
+@media (max-width: 600px) {
+    #backToTop {
+        top: auto; /* Remove the top positioning for small screens */
+        bottom: 30px; /* Position at the bottom for phones */
+        font-size: 9px; /* Slightly larger font size for readability */
+        padding: 4px 5px; /* Adjust padding for mobile */
+    }
+}
+
+
+	
+    </style>
+
+</head>
+<body class="index is-preload">
+    <div id="page-wrapper">
+        
+        <!-- Header -->
+        <header id="header" class="alt">
+            <h1 id="logo"><a href="hjem.htmlEES FivePD</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li class="current"><a href="departments.html">afdelinger</a></li>
+                    <li><a href="hjem.html">Hjem</a></li>
+                    <li><a href="https://discord.gg/Sg6xEbeJXV" class="button">Join Discord</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <article id="main">
+            <header class="special container">
+                <h2>Afdelinger</h2>
+                <p>Her kan du finde information om vores forskellige afdelinger, hvordan du tilmelder dig, og hvilke funktioner der er tilgængelige.</p>
+            </header>
+            
+            <section class="wrapper container">
+                <div class="dept-buttons">
+                   <a href="#politi">
+                   <img src="assets/images/buttonpanser.jpg" alt="Politi">
+                   <span>POLITI</span>
+                   </a>
+                   <a href="#paramediciner">
+                   <img src="assets/images/buttonparamedic.jpg" alt="Paramediciner">
+                   <span>PARAMEDICINER</span>
+                   </a>
+                   <a href="#falck">
+                   <img src="assets/images/buttonfalck.jpg" alt="Falck">
+                   <span>FALCK / BRANDVÆSEN</span>
+                   </a>
+                </div>
+<div>
+    <button id="backToTop">Tilbage til toppen ↑</button>
+
+    <script>
+        var backToTop = document.getElementById("backToTop");
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 2000) {
+                backToTop.style.opacity = "1";  // Make it visible
+                backToTop.style.pointerEvents = "auto"; // Enable clicking
+            } else {
+                backToTop.style.opacity = "0";  // Make it invisible
+                backToTop.style.pointerEvents = "none"; // Disable clicking
+            }
+        };
+
+        backToTop.onclick = function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+    </script>
+</div>
+
+			</body>
+
+
+                
+                <div id="politi" class="department">
+                    <h3></h3>
+
+                         <!-- Video Banner under Politi Section -->
+                <div class="video-banner">
+                      <video autoplay loop muted playsinline>
+                      <source src="assets/videos/coffeetime.mp4" type="video/mp4">
+                       Your browser does not support the video tag.
+                      </video>
+                </div>
+                    <h4><strong>Politiets Opgaver og Funktioner</strong></h4>
+
+                    <h4>Basale Opgaver</h4>
+                    <p>Politiets primære opgave er at opretholde lov og orden, beskytte borgere og ejendom samt sikre et trygt og stabilt spilmiljø. Dette sker gennem patruljering, efterforskning af forbrydelser, trafikkontrol og beredskabsopgaver.</p>
+                    <p>For at sikre en realistisk og velfungerende oplevelse opfordres spillere til at samarbejde på tværs af afdelinger. I mangel af et dispatch-system er det vigtigt, at spillere aktivt koordinerer og rekvirerer nødvendig assistance ved ulykker og hændelser. Dette kan inkludere ambulance, retsmediciner, Falck, brandvæsen, vejhjælp eller andre relevante enheder. Kommunikation og samarbejde er nøglen til et effektivt politiarbejde.</p>
+
+                    <hr>
+
+                    <h4>Sådan Går Du På Vagt (On Duty)</h4>
+                    <p>For at gå på vagt skal du trykke på <strong>F11</strong>. Dette åbner en menu, hvor du kan vælge at gå på vagt og dermed tiltræde din rolle som politibetjent.</p>
+                    <p><strong>Tips:</strong></p>
+                    <ul>
+                        <li>I <strong>F11-menuen</strong> kan du også reloade dine våben, heale dig selv og udstyre dig med en skudsikker vest.</li>
+                        <li>Alle politiets køretøjer indeholder ammunition, skudsikker veste, våben, spikes og brandslukkere.</li>
+                    </ul>
+
+                    <hr>
+
+                    <h4>Vigtige Keybinds</h4>
+                    <ul>
+                        <li><strong>F11:</strong> Åbner vagtmenuen, hvor du kan gå på vagt, heale, udstyre dig med en skudsikker vest og reloade våben.</li>
+                        <li><strong>F1 (vMenu):</strong> Åbner serverens primære menu til spillerindstillinger, køretøjsmodifikationer og generelle justeringer.</li>
+                        <li><strong>Z (Callout Menu):</strong> Tillader dig at tilknytte spillere til dit callout og anmode om backup.</li>
+						<li><strong>G (Main Menu):</strong> I dispatch menuen kan du bruge Ai Dispatch til at rekvirer indsatsleder til fangede brand / ambulance / vejlhjælp og lign du kan også requeste ped checks altså id tjeks af personer du har tilbage holdt  samt requeste nummerplade aflæsning - i scene menu her kan du sætte farts zoner og spawne objects som politi barricader kegler og lign udstyr 
+						<li><strong>/pb (Overfalds Alarm):</strong> 
+                    </ul>
+
+                    <h4>Backup-koder:</h4>
+                    <ul>
+                        <li><strong>Kørsel 1:</strong> Laveste prioritet, ingen blink eller sirener.</li>
+                        <li><strong>Kørsel 2:</strong> Mellemprioritet, ingen blink eller sirener, men hurtigere respons.</li>
+                        <li><strong>Kørsel 3:</strong> Høj prioritet, fuld blink og sirener.</li>
+                        <li><strong>Kørsel 99</strong> Overfald eller alvorlige situationer. Alle tilgængelige enheder skal rykke ud. Anvendes kun ved meget alvorlige hændelser, som f.eks. overfald på betjente eller andre livstruende situationer.</li>
+                    </ul>
+
+                    <h4>Multi-Agency Backup:</h4>
+                    <p>Bruges i situationer med akut fare eller krav om massiv indsats, f.eks. terrortrusler eller store hændelser med behov for alle enheder.</p>
+
+                    <hr>
+
+                    <h4>Realisme og Spilforståelse</h4>
+                    <p>For at skabe en autentisk oplevelse er det vigtigt at forholde sig realistisk til opgaverne. Politiet samarbejder tæt med andre beredskabsenheder og koordinerer indsatsen ved ulykker og krisesituationer. De opstillede koder (1, 2, 3 og 99) er standardiserede og kan ikke ændres, da de er en fast del af spillets system.</p>
+                    <p>Alle spillere opfordres til at bidrage til et professionelt og velfungerende RP-miljø ved at respektere reglerne, samarbejde med andre og agere realistisk i henhold til deres rolle.</p>
+
+    <!-- Other content here -->
+</div>
+
+<div id="paramediciner" class="department">
+    <h3></h3>
+    <!-- Video Banner under Politi Section -->
+    <div class="video-banner">
+        <video autoplay loop muted playsinline>
+            <source src="assets/videos/paramedicroadassist.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+		
+    </div>
+<h4><strong>Ambulancefolkets Opgaver og Funktioner</strong></h4>
+
+<h4>Basale Opgaver</h4>
+    <p>Ambulancefolkets primære opgave er at yde akut medicinsk hjælp, redde liv og sikre hurtig transport til hospitalet i nødsituationer. Dette sker gennem hurtig respons på opkald, stabilisering af patienter på stedet og behandling af skader eller sygdomme, mens de transporteres til en relevant medicinsk facilitet. For at sikre en effektiv og realistisk oplevelse opfordres spillere til at samarbejde tæt med politiet, brandvæsenet og andre enheder. I tilfælde af ulykker eller medicinske nødsituationer, hvor koordination mellem enhederne er vigtig, er det nødvendigt, at spillere aktivt kommunikerer og samarbejder om at få de rette ressourcer på stedet. Ambulancefolkene spiller en central rolle i at stabilisere patienter og sikre, at de får den nødvendige pleje på vej til hospitalet.</p>
+    
+    <p><strong>Sådan går du på vagt (On Duty):</strong></p>
+    <p>Ambulancefolk har endnu ikke en specifik menu for dem selv, derfor er afdelingerne tilføjet i politiets CAD-system. Du kan gå på vagt ligesom alle andre betjente i byen og koordinere sammen med politiet eller RP dine egne scenarier med de callouts, der dukker op, hvor ambulance og brandfolk er nødvendige. Du må ikke bruge taser, våben, spikes eller lignende, når du opererer som paramediciner.</p>
+
+    <p><strong>Vigtige Keybinds:</strong></p>
+    <ul>
+        <li><strong>F11:</strong> Åbner vagtmenuen, hvor du kan gå på vagt. Husk at vælge afdeling i politi-tabletten under F3 og vælg derefter afdeling "Ambulance". Her kan du, ligesom politiet, heale dig selv. Men husk, ingen våben!</li>
+        <li><strong>F1 (vMenu):</strong> Åbner serverens primære menu til spillerindstillinger, køretøjsmodifikationer og generelle justeringer.</li>
+        <li><strong>Z (Callout Menu):</strong> Tillader dig at tilknytte spillere til dit callout og anmode om backup.</li>
+        <li><strong>G (Main Menu):</strong> I dispatch-menuen kan du bruge Ai Dispatch til at rekvirere indsatsleder til brand, ambulance, vejhjælp og lignende. Du kan også requeste ped-checks (ID-tjek af personer, du har tilbageholdt) samt requeste nummerpladeaflæsning.</li>
+        <li><strong>Start CPR - O:</strong> Når du starter CPR, vil en cirkel vises, og du skal hurtigt trykke på det nummer, der vises i cirklen, for at have den højeste chance for at genoplive spilleren/AI-ped.</li>
+        <li><strong>Exit CPR - X:</strong> Afslutter CPR-aktiviteten.</li>
+        <li><strong>Carry Ped - Cped /consolecommand:</strong> Bruges til at bære en person.</li>
+        <li><strong>Drop Ped - Cped again:</strong> Bruges til at droppe en person.</li>
+        <li><strong>Drag Players:</strong> Du må ikke trolle eller bære andre uden tilladelse eller RP-baggrund. Brug /drag spiller-specifik drag-kommando.</li>
+        <li><strong>Strecher:</strong> Brug kun som prop. Anbefales ikke at bruge buggy scripts. Brug kun følgende kommandoer:
+            <ul>
+                <li>/spawnstr - Spawner en båre.</li>
+                <li>/delStr - Sletter båre.</li>
+                <li>/pushstr - Skubber båre.</li>
+                <li>Hvis du bliver fanget, skal du forlade og komme tilbage.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h4>Backup-koder:</h4>
+    <ul>
+        <li><strong>Kørsel 1:</strong> Laveste prioritet. Ingen blink eller sirener. Køres i almindelig hastighed og uden hastende behov. Bruges til opgaver, der ikke er presserende.</li>
+        <li><strong>Kørsel 2:</strong> Mellemprioritet. Ingen sirener, men blinklys bruges. Køres hurtigere, men ikke med hastig respons. Anvendes til situationer, hvor der er behov for hurtigere fremkomst, men ikke akut handling.</li>
+        <li><strong>Kørsel 3:</strong> Høj prioritet. Fuld blink og sirener. Køres hurtigt og med prioritet over andre køretøjer. Anvendes i akutte situationer som alvorlige ulykker eller kriminalitet.</li>
+        <li><strong>Kørsel 99:</strong> Overfald eller alvorlige situationer. Alle tilgængelige enheder skal rykke ud. Anvendes kun ved meget alvorlige hændelser, som f.eks. overfald på betjente eller andre livstruende situationer.</li>
+    </ul>
+
+    <h4>Multi-Agency Backup:</h4>
+    <p>Bruges i situationer med akut fare eller krav om massiv indsats, f.eks. terrortrusler eller store hændelser, der kræver indsats fra alle enheder.</p>
+
+    <h4>Retningslinjer for tilkald og RP:</h4>
+    <p>Paramedicinerne responderer kun på opkald, der er rekvireret af politi, brandvæsen eller alarmcentralen. De tager ikke selv initiativ til at rykke ud, medmindre en akut medicinsk nødsituation opstår i deres nærhed.</p>
+    <p>Ved trafikulykker og alvorlige hændelser vil paramedicinerne yde førstehjælp og stabilisere patienterne. Transport til hospitalet sker først efter vurdering af situationen. De har ikke beføjelse til at fjerne afdøde personer fra en scene uden politiets godkendelse.</p>
+
+</div>
+
+                
+                <div id="falck" class="department">
+                    <h3></h3>
+                <div class="video-banner">
+                      <video autoplay loop muted playsinline>
+                      <source src="assets/videos/bannerstatus.mp4" type="video/mp4">
+                       Your browser does not support the video tag.
+                      </video>
+                </div>
+					<h4><strong>Falck og Brandvæsenets - Opgaver og Beredskabsfunktioner</strong></h4>
+
+                    <h4>Basale Opgaver</h4>
+                    <p>Brand- og redningsmandskabets primære opgave er at redde liv, begrænse skader og sikre tryghed i nødsituationer. Dette sker gennem hurtig respons på opkald, effektiv brandslukning, teknisk redning og assistance ved ulykker. For at sikre en realistisk og koordineret oplevelse opfordres spillere til at samarbejde tæt med politiet, ambulancepersonale og andre enheder. Ved ulykker eller brænde, hvor koordination mellem enhederne er vigtig, er det essentielt, at spillere aktivt kommunikerer og samarbejder om at få de rette ressourcer på stedet. Brandfolkene spiller en central rolle i at stabilisere situationen, sikre personer i nød og yde relevant assistance.</p>
+
+<h4>Sådan Går Du På Vagt (On Duty)</h4>
+<p>Brand- og redningsfolk har endnu ikke en specifik menu, derfor har vi tilføjet afdelinger i politiets CAD. Du kan gå på vagt ligesom betjente i byen og koordinere sammen med politiet eller RP dine egne scenarier med de callouts, der dukker op, hvor brandfolk og redningspersonale er nødvendige.</p>
+
+<h4>Vigtige Keybinds</h4>
+<ul>
+    <li><strong>F11:</strong> Åbner vagtmenuen (vælg Falck eller Brand under politiets F3-menu).</li>
+    <li><strong>F1 (vMenu):</strong> Til adgang til serverens primære menu.</li>
+    <li><strong>Z (Callout Menu):</strong> Tilføj spillere til et kald og anmod om backup.</li>
+    <li><strong>G (Main Menu):</strong> Brug AI Dispatch til at rekvirere indsatsleder, id-tjek og nummerpladeopslag.</li>
+    <li><strong>Start HLR (CPR) - O:</strong> Start et mini-game for genoplivning.</li>
+    <li><strong>Afslut HLR - X:</strong> Stop genoplivning.</li>
+    <li><strong>Bær en person - /cped</strong></li>
+    <li><strong>Drop person - /cped igen</strong></li>
+    <li><strong>Træk spillere - /drag</strong> (Må kun bruges ved RP-begrundelse, ingen trolling!)</li>
+    <li><strong>Brug af båre:</strong></li>
+    <ul>
+        <li><strong>/spawnstr</strong> – Spawner en båre</li>
+        <li><strong>/delstr</strong> – Fjerner en båre</li>
+        <li><strong>/pushstr</strong> – Skubber en båre</li>
+    </ul>
+</ul>
+
+<h4>Backup-koder</h4>
+<ul>
+    <li><strong>Kørsel 1:</strong> Laveste prioritet. Ingen blink eller sirener. Bruges til opgaver, der ikke er presserende.</li>
+    <li><strong>Kørsel 2:</strong> Mellemprioritet. Ingen sirener, men blinklys bruges. Anvendes til situationer, hvor der er behov for hurtigere fremkomst, men ikke akut handling.</li>
+    <li><strong>Kørsel 3:</strong> Høj prioritet. Fuld blink og sirener. Bruges i akutte situationer som alvorlige ulykker eller brande.</li>
+    <li><strong>Kørsel 99:</strong> Overfald eller alvorlige situationer. Brand- og Falck-personale skal ikke respondere til kørsel 99 (code 99).
+
+Alle tilgængelige enheder fra politi og ambulanceberedskabet skal rykke ud. Dette anvendes kun ved meget alvorlige hændelser, såsom overfald på beredskabspersonale.</li>
+</ul>
+
+<h4>Multi-Agency Backup</h4>
+<p>Bruges i situationer med akut fare eller krav om massiv indsats, f.eks. terrortrusler eller store hændelser med behov for alle enheder.</p>
+
+<h4>Retningslinjer for Brand- og Redningspersonale</h4>
+<ul>
+Brandfolk rykker kun ud på anmodning fra politiet, alarmcentralen eller anden relevant myndighed.</li>
+Ved brande, ulykker og tekniske redningsopgaver spiller brandmænd en central rolle i at sikre området, redde fastklemte personer og yde førstehjælp.</li>
+Brandfolk kan deltage i RP-scenarier som assistance ved motorstop, bjærgning efter ulykker, oprydning efter brande og lignende opgaver.</li>
+Brandfolk har ikke befojelse til at fjerne afdøde personer uden politiets godkendelse.</li>
+Ingen brandfolk må bruge taser, våben, spikes eller lignende, når de opererer som Falck/redningsfolk.</li>
+</ul>
+
+                </div>
+            </section>
+        </article>
+        
+<!-- Ad placeholder example -->
+<div style="width:100%; height:100px; background-color:#2a2a2a; margin:0rem 0; text-align:center; line-height:100px; color:#fff;">
+    Reklame
+</div>
+<!-- Ad placeholder example -->
+    
+<footer id="footer">
+    <ul class="icons">
+        <li><a href="https://discord.gg/Sg6xEbeJXV" class="icon brands fa-discord"></a></li>
+        <li><a href="#" class="icon brands fa-youtube"></a></li>
+        <li><a href="#" class="icon brands fa-paypal"></a></li>
+    </ul>
+    <ul class="copyright">
+        <li>&copy; 2025 EES FivePD. Alle rettigheder forbeholdes </li>
+    </ul>
+</footer>
+    
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+	
+<script>
+    // JavaScript to handle button click and toggle information visibility
+    document.querySelectorAll('.team-btn').forEach(function(button) {
+        button.addEventListener('click', function() {
+            // Toggle 'active' class to show/hide the info
+            const info = this.nextElementSibling;
+            if (info.style.display === 'block') {
+                info.style.display = 'none';
+            } else {
+                info.style.display = 'block';
+            }
+        });
+    });
+</script>

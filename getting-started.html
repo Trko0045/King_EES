@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EES FivePD - Velkommen</title>
+    <link rel="icon" type="image/png" sizes="96x96" href="images/icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css"></noscript>
+
+    <style>
+
+.blog-section {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 200px;
+    transition: transform 0.2s ease; /* smooth pop animation */
+    background-color: #ffffff; /* solid background */
+}
+
+.blog-section:hover {
+    transform: scale(1.03); /* tiny pop */
+}
+
+.blog-section img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px;
+    border-radius: 8px;
+}
+
+.blog-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.blog-section p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+/* Tabs */
+.tabs {
+    margin-top: 2rem;
+    background: #001d3d;
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+        /* Reset & Base Styles */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background: url('images/banner.jpg') center/cover no-repeat fixed;
+            color: #ffffff;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        /* Dark overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0); /* Adjust darkness here */
+            z-index: 8;
+            pointer-events: none; /* Keeps everything clickable */
+        }
+
+        /* Make sure content stays above overlay */
+        #header, #footer, article, .wrapper, #cta {
+            position: relative;
+            z-index: 2;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        h1, h2, h3 { color: #007bff; }
+        .wrappertop { 
+            background-color: rgb(0, 33, 123); 
+            padding: 12px; 
+            border-radius: 10px; 
+            margin-bottom: -31px;
+            box-shadow: 0 50px 50px rgba(1,0,0,0.9);
+        }
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;      /* allows wrapping on smaller screens */
+    gap: 20px;            /* spacing between sections */
+    justify-content: center; /* center them horizontally */
+            background-color: rgba(255, 255, 255, 0.92); 
+}
+
+        /* Header */
+        #header {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(0,0,0,0.8);
+            top: 0;
+            z-index: 10;
+        }
+        #logo a { font-size: 1.8rem; font-weight: 700; color: #007bff; }
+        #nav ul { display: flex; list-style: none; gap: 1rem; }
+        #nav ul li a { padding: 0.5rem 1rem; border-radius: 5px; transition: 0.3s; }
+        #nav ul li a:hover, #nav ul li.current a { background: #007bff; color: #fff; }
+
+        /* Banner */
+        #banner { 
+            text-align: center; 
+            padding: 6rem 2rem;
+        }
+        #banner h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        #banner p { max-width: 700px; margin: 0 auto 2rem; }
+        #banner .button { padding: 0.75rem 2rem; border-radius: 50px; background: #007bff; color: #fff; transition: 0.3s; }
+        #banner .button:hover { background: #0056b3; }
+
+        /* Main Content */
+        article { padding: 2rem; max-width: 12000px; margin: auto; }
+        .featured-icons { display: flex; gap: 2rem; justify-content: center; margin-top: 1rem; }
+        .featured-icons li { display: flex; flex-direction: column; align-items: center; }
+        .featured-icons .icon { font-size: 2.5rem; color: #4CAF50; margin-bottom: 0.5rem; }
+
+        /* CTA Section */
+        #cta { text-align: center; padding: 4rem 2rem; background: rgba(0,0,0,0.7); border-radius: 12px; margin: 2rem 0; }
+        #cta h2 { margin-bottom: 1rem; }
+        #cta .button { margin: 0 0.5rem; padding: 0.75rem 2rem; border-radius: 50px; }
+
+        /* Footer */
+        #footer { text-align: center; padding: 2rem; background: #000; }
+        #footer .icons { list-style: none; display: flex; justify-content: center; gap: 1rem; margin-bottom: 1rem; }
+        #footer .icons li a { color: #fff; font-size: 1.5rem; transition: 0.3s; }
+        #footer .icons li a:hover { color: #007bff; }
+        #footer .copyright li { display: inline; margin: 0 0.5rem; font-size: 0.9rem; }
+
+        /* Responsive */
+        @media(max-width: 768px) {
+            #header { flex-direction: column; gap: 1rem; }
+            #nav ul { flex-direction: column; gap: 0.5rem; }
+            #banner h2 { font-size: 2rem; }
+            .wrapper { padding: 1rem; }
+        }
+
+
+
+#backToTop {
+    display: block;
+    opacity: 0; /* Initially hidden */
+    position: fixed;
+    top: 50px; /* Position at the top for PC */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Offset the element to center it */
+    background-color: #007bff;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 1%;
+    cursor: pointer;
+    font-size: 9px; /* Adjust font size for better visibility */
+    border: none;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 9999; /* Make sure it's above everything */
+    pointer-events: none; /* Disable clicking when invisible */
+}
+
+#backToTop:hover {
+    background-color: #003bff;
+}
+
+@media (max-width: 600px) {
+    #backToTop {
+        top: auto; /* Remove the top positioning for small screens */
+        bottom: 30px; /* Position at the bottom for phones */
+        font-size: 9px; /* Slightly larger font size for readability */
+        padding: 4px 5px; /* Adjust padding for mobile */
+    }
+}
+
+
+
+/* Container */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centers image and text horizontally */
+    max-width: 1474px;    /* limits width */
+    margin: 0 auto;      /* center container in page */
+}
+
+/* Main title */
+.title {
+    font-size: 64px;     /* adjust pixels here */
+    font-weight: bold;
+    margin-bottom: -17px;
+    line-height: 1;
+    text-align: left;  /* centered */
+    color: white;
+}
+
+/* Subtitle */
+.subtitle {
+    font-size: 32px;     /* smaller than title but bigger than paragraph */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left;  /* can change to left/right individually */
+    color: #000000;
+}
+
+/* Paragraph */
+.description {
+    font-size: 16px;     /* normal text */
+    line-height: 1.6;
+    text-align: center;  /* can tweak to left/right */
+    margin: 0 20px;      /* padding from sides */
+    color: white;
+    color: white;
+}
+
+.blog-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Push text to the bottom */
+    height: 100%;
+}
+
+.blog-content img {
+    flex-shrink: 0;
+}
+/* Hide nav links on small screens */
+@media screen and (max-width: 768px) {
+    #header nav {
+        display: none;
+    }
+}
+    </style>
+
+
+
+
+
+
+
+</head>
+<body class="index is-preload">
+
+    <header id="header">
+        <h1 id="logo"><a href="hjem.html">EES FivePD</a></h1>
+        <nav id="nav">
+            <ul>
+                <li class="current"><a href="getting-started.html">Kom godt igang</a></li>
+                <li><a class="current" href="hjem.html">Hjem</a></li>
+                <li><a href="https://discord.gg/Sg6xEbeJXV" class="button">Join Discord</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+<div id="getting-started">
+    <div class="wrappertop">
+        <section class="main">
+            <div class="main-content">
+                <div class="text">
+                    <h1 class="title">Kom Godt Igang</h1>
+                    <h2 class="subtitle">Med FivePD</h2>
+                    <p>
+                        Hej! Velkommen til Kom Godt Igang-sektionen!<br><br>
+                        Er du en gamer, der brænder for at opleve spændingen ved politiroleplay?<br><br>
+                        Vi har en skattekiste af brugervenlige tutorials, klar til at guide dig hvert skridt på vejen. Uanset om du er helt ny i FivePD eller en erfaren spiller, hjælper vi dig med at:<br><br>
+                        <strong>- Mestre grundlæggende FivePD:</strong> Lær det essentielle om denne spændende mod og udnyt dens fulde potentiale.<br><br>
+                        <strong>- Blive en FivePD-spiller:</strong> Opdag, hvordan du tilslutter dig vores server og starter dit politiroleplay-eventyr.<br><br>
+                        Klar til at slippe din indre betjent løs? Udforsk vores tutorials herunder og begynd dit FivePD-eventyr i dag!
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+<article id="getting-started">
+    <div class="wrapper">
+
+        <!-- Example: Image left, text right -->
+        <section class="blog-section" onclick="window.location.href='FivePDGuide.html';" style="cursor:pointer;">
+            <div class="blog-content">
+                <img src="images/fivepd_icon.jpg" alt="FivePD">
+                <div class="text">
+                    <h2>FivePD Guide</h2>
+                    <p>En guide til FivePD. Vigtige keybinds og general vejledning</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Example: Image right, text left -->
+        <section class="blog-section" onclick="window.location.href='dinbetjent.html';" style="cursor:pointer;">
+            <div class="blog-content reverse">
+                <img src="images/Betjent_rapport.jpg" alt="Betjent Editor">
+                <div class="text">
+                    <a href="dinbetjent.html" class="blog-link">
+                        <h2>Skab din egen betjent</h2>
+                        <p>Design din helt egen betjent og oplev, hvordan du kan forme din karakter i spillet.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Example: Image left, text right -->
+        <section class="blog-section" onclick="window.location.href='https://discord.gg/Sg6xEbeJXV';" style="cursor:pointer;">
+            <div class="blog-content">
+<img src="https://cdn.worldvectorlogo.com/logos/discord-6.svg" alt="Discord Logo" style="width:100px; height:auto;">
+
+                <div class="text">
+                    <a href="https://discord.gg/Sg6xEbeJXV" class="blog-link">
+                        <h2>Nyttige regler og info</h2>
+                        <p>Lær om vores engagerede fællesskab, Join Discord</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</article>
+
+
+
+<script>
+function openTab(tabId) {
+    const tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => tab.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+}
+</script>
+
+<!-- Ad placeholder example -->
+<div style="width:100%; height:200px; background-color:#2a2a2a; margin:rem 0; text-align:center; line-height:100px; color:#505050;">
+    Reklame
+</div>
+
+<!-- Ad placeholder example -->
+    
+<footer id="footer">
+    <ul class="icons">
+        <li><a href="https://discord.gg/Sg6xEbeJXV" class="icon brands fa-discord"></a></li>
+        <li><a href="#" class="icon brands fa-youtube"></a></li>
+        <li><a href="#" class="icon brands fa-paypal"></a></li>
+    </ul>
+    <ul class="copyright">
+        <li>&copy; 2025 EES FivePD. Alle rettigheder forbeholdes </li>
+    </ul>
+</footer>
+    
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+	
+
+<script>
+    // JavaScript to handle button click and toggle information visibility
+    document.querySelectorAll('.team-btn').forEach(function(button) {
+        button.addEventListener('click', function() {
+            // Toggle 'active' class to show/hide the info
+            const info = this.nextElementSibling;
+            if (info.style.display === 'block') {
+                info.style.display = 'none';
+            } else {
+                info.style.display = 'block';
+            }
+        });
+    });
+</script>

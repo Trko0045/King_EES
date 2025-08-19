@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EES FivePD - Velkommen</title>
+    <link rel="icon" type="image/png" sizes="96x96" href="images/icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css"></noscript>
+
+    <style>
+
+
+.blog-section {
+    display: flex;
+    flex-direction: column; /* image on top, text below */
+    align-items: center;
+    margin: 100px 0;
+    position: relative;
+    width: fit-content;
+}
+
+
+
+/* Optional: alternate left/right offsets for large screens */
+.blog-section:nth-child(odd) {
+    left: 115px;
+}
+
+.blog-section:nth-child(even) {
+    left: 945px;
+    top: 44px;
+}
+
+
+.blog-section img {
+    width: 400px;         /* default size */
+    max-width: 100%;      /* responsive */
+    height: auto;
+    border-radius: 1px;
+    margin-bottom: 20px;  /* spacing between image and text */
+}
+
+/* Text styling */
+.blog-section .text {
+    max-width: 788px;
+    text-align: center;
+}
+
+/* Medium screens: small desktops/tablets */
+@media (max-width: 1200px) and (min-width: 769px) {
+    .blog-section:nth-child(even),
+    .blog-section:nth-child(odd) {
+        left: 50% !important;       
+        transform: translateX(-50%); /* center */
+    }
+}
+
+/* Small screens: phones */
+@media (max-width: 768px) {
+    .blog-section {
+        flex-direction: column !important;
+        position: static !important;
+        width: 100% !important;
+        margin: 50px auto !important;
+        align-items: center !important;
+    }
+
+    .blog-section img {
+        width: 90% !important;
+        max-width: 400px !important;
+        margin-bottom: 20px;
+    }
+
+    .blog-section .text {
+        max-width: 90% !important;
+        text-align: center !important;
+    }
+}
+
+
+/* Default positions for desktop */
+#custom-image1 {
+    position: absolute;
+    top: 1166px;
+    left: 305px;
+    transform: scale(1.4);
+    z-index: 9990;
+}
+#custom-image2 {
+    position: absolute;
+    top: 2086px;
+    left: 275px;
+    transform: scale(1.3);
+    z-index: 9990;
+}
+#custom-image3 {
+    position: absolute;
+    top: 3058px;
+    left: 223px;
+    transform: scale(1.1);
+    z-index: 9990;
+}
+#custom-image4 {
+    position: absolute;
+    top: 293px;
+    left: 585px;
+    transform: scale(0.5);
+    z-index: 9990;
+}
+#custom-image5 {
+    position: absolute;
+    top: 1244px;
+    left: 291px;
+    transform: scale(1.1);
+    z-index: 9990;
+}
+
+
+/* Add CSS variables for small screens */
+:root {
+    --ci1-top-sm: 50px;
+    --ci1-left-sm: 20px;
+
+    --ci2-top-sm: 100px;
+    --ci2-left-sm: 50px;
+
+    --ci3-top-sm: 200px;
+    --ci3-left-sm: 30px;
+
+    --ci4-top-sm: 300px;
+    --ci4-left-sm: 10px;
+
+    --ci5-top-sm: 400px;
+    --ci5-left-sm: 40px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    #custom-image1 {
+    top: 1161px;
+    left: 354px;
+        width: 50%;
+        max-width: 274px;
+        transform: scale(0.3);
+        position: absolute; /* still absolute if you want to move freely */
+    }
+    #custom-image2 {
+    top: 1481px;
+    left: 362px;
+        width: 80%;
+        max-width: 274px;
+        transform: scale(0.35);
+        position: absolute; /* still absolute if you want to move freely */
+    }
+    #custom-image3 {
+    top: 2593px;
+    left: 308px;
+        width: 80%;
+        max-width: 274px;
+        transform: scale(0.4);
+        position: absolute; /* still absolute if you want to move freely */
+    }
+    #custom-image4 {
+    top: 714px;
+    left: 66px;
+        width: 50%;
+        max-width: 162px;
+        transform: scale(0.26);
+        position: absolute; /* still absolute if you want to move freely */
+    }
+    #custom-image5 {
+    top: 2715px;
+    left: 29px;
+        width: 50%;
+        max-width: 162px;
+        transform: scale(0.4);
+        position: absolute; /* still absolute if you want to move freely */
+    }
+    /* ... repeat for 3,4,5 ... */
+}
+
+
+
+
+/* Tabs */
+.tabs {
+    margin-top: 2rem;
+    background: #001d3d;
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+        /* Reset & Base Styles */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background: url('images/academy.jpg') center/cover no-repeat fixed;
+            color: #ffffff;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        /* Dark overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0); /* Adjust darkness here */
+            z-index: 8;
+            pointer-events: none; /* Keeps everything clickable */
+        }
+
+        /* Make sure content stays above overlay */
+        #header, #footer, article, .wrapper, #cta {
+            position: relative;
+            z-index: 2;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        h1, h2, h3 { color: #007bff; }
+        .wrappertop { 
+            background-color: rgb(0, 33, 123); 
+            padding: 12px; 
+            border-radius: 10px; 
+            margin-bottom: -31px;
+            box-shadow: 0 50px 50px rgba(1,0,0,0.9);
+        }
+        .wrapper { 
+            background-color: rgba(0, 0, 0, 0.94); 
+            padding: 12px; 
+            border-radius: 10px; 
+            margin-bottom: 100px;
+            box-shadow: 0 50px 50px #000b17;
+        }
+
+        /* Header */
+        #header {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(0,0,0,0.8);
+            top: 0;
+            z-index: 10;
+        }
+        #logo a { font-size: 1.8rem; font-weight: 700; color: #007bff; }
+        #nav ul { display: flex; list-style: none; gap: 1rem; }
+        #nav ul li a { padding: 0.5rem 1rem; border-radius: 5px; transition: 0.3s; }
+        #nav ul li a:hover, #nav ul li.current a { background: #007bff; color: #fff; }
+
+        /* Banner */
+        #banner { 
+            text-align: center; 
+            padding: 6rem 2rem;
+        }
+        #banner h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        #banner p { max-width: 700px; margin: 0 auto 2rem; }
+        #banner .button { padding: 0.75rem 2rem; border-radius: 50px; background: #007bff; color: #fff; transition: 0.3s; }
+        #banner .button:hover { background: #0056b3; }
+
+        /* Main Content */
+        article { padding: 2rem; max-width: 12000px; margin: auto; }
+        .featured-icons { display: flex; gap: 2rem; justify-content: center; margin-top: 1rem; }
+        .featured-icons li { display: flex; flex-direction: column; align-items: center; }
+        .featured-icons .icon { font-size: 2.5rem; color: #4CAF50; margin-bottom: 0.5rem; }
+
+        /* CTA Section */
+        #cta { text-align: center; padding: 4rem 2rem; background: rgba(0,0,0,0.7); border-radius: 12px; margin: 2rem 0; }
+        #cta h2 { margin-bottom: 1rem; }
+        #cta .button { margin: 0 0.5rem; padding: 0.75rem 2rem; border-radius: 50px; }
+
+        /* Footer */
+        #footer { text-align: center; padding: 2rem; background: #000; }
+        #footer .icons { list-style: none; display: flex; justify-content: center; gap: 1rem; margin-bottom: 1rem; }
+        #footer .icons li a { color: #fff; font-size: 1.5rem; transition: 0.3s; }
+        #footer .icons li a:hover { color: #007bff; }
+        #footer .copyright li { display: inline; margin: 0 0.5rem; font-size: 0.9rem; }
+
+        /* Responsive */
+        @media(max-width: 768px) {
+            #header { flex-direction: column; gap: 1rem; }
+            #nav ul { flex-direction: column; gap: 0.5rem; }
+            #banner h2 { font-size: 2rem; }
+            .wrapper { padding: 1rem; }
+        }
+#backToTop {
+    display: block;
+    opacity: 0; /* Initially hidden */
+    position: fixed;
+    top: 50px; /* Position at the top for PC */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Offset the element to center it */
+    background-color: #007bff;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 1%;
+    cursor: pointer;
+    font-size: 9px; /* Adjust font size for better visibility */
+    border: none;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 9999; /* Make sure it's above everything */
+    pointer-events: none; /* Disable clicking when invisible */
+}
+
+#backToTop:hover {
+    background-color: #003bff;
+}
+
+@media (max-width: 600px) {
+    #backToTop {
+        top: auto; /* Remove the top positioning for small screens */
+        bottom: 30px; /* Position at the bottom for phones */
+        font-size: 9px; /* Slightly larger font size for readability */
+        padding: 4px 5px; /* Adjust padding for mobile */
+    }
+}
+
+/* Hide nav links on small screens */
+@media screen and (max-width: 768px) {
+    #header nav {
+        display: none;
+    }
+}
+    </style>
+
+
+
+
+
+
+
+</head>
+<body class="index is-preload">
+
+    <header id="header">
+        <h1 id="logo"><a href="hjem.html">EES FivePD</a></h1>
+        <nav id="nav">
+            <ul>
+                <li class="current"><a href="getting-started.html">hvad er FivePD</a></li>
+                <li><a class="current" href="hjem.html">Hjem</a></li>
+                <li><a href="https://discord.gg/Sg6xEbeJXV" class="button">Join Discord</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+<div class="#custom-image">
+    <div id="custom-image1">
+        <img src="images/fivepd_specific/onduty.jpg" alt="First Image">
+    </div>
+
+    <div id="custom-image2">
+        <img src="images/fivepd_specific/3.jpg" alt="Second Image">
+    </div>   
+
+ <div id="custom-image3">
+        <img src="images/fivepd_specific/menudispatc.jpg" alt="Second Image">
+    </div>
+
+ <div id="custom-image4">
+        <img src="images/banner.jpg" alt="Second Image">
+    </div> 
+
+<div id="custom-image4">
+        <img src="images/banner_noblure.jpg" alt="Second Image">
+    </div>
+
+</div>
+
+
+
+
+
+
+    <article id="getting-started">
+    <div class="wrapper">
+
+        <!-- Example: Image left, text right -->
+<section class="blog-section">
+    <img src="https://fivepdmod.com/wp-content/uploads/2024/12/fivepdwhite.png" alt="FivePD">
+    <div class="text">
+        <h2>Hvad er FivePD?</h2>
+        <p>
+            ​FivePD er en spændende multiplayer-lovhåndhævelsesmod til FiveM, inspireret af den populære singleplayer-mod 
+            <a href="https://www.lcpdfr.com/" target="_blank" style="outline:none; border:none; text-decoration:none; color:#00aaff; font-weight:bold;">
+                LSPD:FR
+            </a>. Mod'en giver spillere mulighed for at opleve spændingen ved at være politibetjent i et samarbejdsmiljø, perfekt til rollespil og teamwork.
+        </p>
+        <p>
+            Uanset om det er patruljering på gaderne, respons på nødsituationer eller jagt på mistænkte, leverer FivePD en adrenalinfyldt oplevelse. 
+            Med dynamiske opkald, realistiske missioner og dybdegående tilpasning kan spillerne engagere sig i alt fra trafikstop til arrestationer af AI-kontrollerede mistænkte.
+        </p>
+        <p>
+            FivePD fokuserer på samarbejde og strategi. Spillere kan arbejde tæt sammen med holdkammerater for at tackle udfordringer, planlægge operationer og sikre orden på gaderne. 
+            Det er en autentisk og dynamisk politisimulation, der bringer LSPD:FR-oplevelsen ind i en multiplayer-verden.
+        </p>
+        <p>
+            Mod'en giver mulighed for både casual og hardcore gameplay, hvor alle kan finde deres rolle som patruljepolitibetjent, specialenhed eller trafikbetjent. 
+            FivePD er et must-try for alle, der elsker politisimulation og realistisk rollespil i GTA V's univers.
+        </p>
+    </div>
+</section>
+
+<section class="blog-section reverse">
+    <div class="text">
+        <p><strong>Keybinds og tips</strong>
+        <p>FivePD er en multiplayer-mod til GTA V, der giver dig mulighed for at spille som politibetjent, ankomme til opkald, foretage anholdelser og administrere scener i realtid. Denne guide giver dig en komplet introduktion til kontroller, gameplay og nyttige tips, så du får mest muligt ud af din oplevelse.</p>
+        <p><strong>Vigtige Bemærkninger</strong>
+        <p>- Du skal være en del af en afdeling for at modtage opkald og åbne visse in-game menuer.</p>
+        <p>- Nogle FivePD bilfunktioner kræver tilføjelser til vehicles.json filen. Det anbefales, men er ikke påkrævet, at lave nødvendige tilføjelser.</p>
+
+        <h3>Basic Controls</h3>
+        <p>- F11: Åbn vagtmenu</p>
+        <p>- Y: Accepter opkald eller backup-forespørgsel</p>
+        <p>- Z: Åbn opkalds-menu (se vigtige bemærkninger ovenfor)</p>
+        <p>- G: Åbn dispatch og scene management menu</p>
+        <p>- X: Åbn ped interaktionsmenu</p>
+        <p>- O: Sæt waypoint til nærmeste fængselsafleveringspunkt (når der er en arresteret ped i bilen eller kontrolleret af en spiller)</p>
+        <p>- Hold E i ca. 2 sekunder: Stop ped</p>
+        <p>- Hold E + sigt: Stop ped</p>
+        <p>- E: Placer håndjernede ped i bilen (skal være tæt på ped)</p>
+        <p>- LSHIFT + E: Sæt spike strips ud ved bagagerummet. Tryk igen for at samle dem op</p>
+
+        <h3>Additional Ped Controls</h3>
+        <p>- U: Placer ped i fængsel (skal være tæt på arresteret ped ved fængselsafleveringspunkt)</p>
+        <p>- J: Åbn ID-kort panel (efter at have modtaget ped's licens)</p>
+
+        <h3>Vehicle Controls</h3>
+        <p>- B: Åbn MDT</p>
+        <p>- LSHIFT: Blip bilen foran dig. Brug lys for at starte trafikstop. Hold for 3 sekunder for at annullere</p>
+        <p>- F9: Toggle ALPR</p>
+        <p>- X: Åbn trafikstop positioneringsmenu</p>
+        <p>- LCTRL: Aktivér/deaktivér cruise control (skal aktiveres i vagtmenuen først)</p>
+        <p>- NUM PLUS: Øg hastighed</p>
+        <p>- NUM MINUS: Sænk hastighed</p>
+
+        <h3>Chat Commands</h3>
+        <p>- Tilgængelig for alle:</p>
+        <p>&nbsp;&nbsp;/fdv - Slet nærmeste eller nuværende bil (inkl. peds og blips)</p>
+        <p>&nbsp;&nbsp;/fdp - Slet nærmeste ped</p>
+        <p>&nbsp;&nbsp;/fdo - Slet nærmeste FivePD objekt</p>
+
+        <h3>Services</h3>
+        <p>- Ambulance og brandvæsen: Forsøger at genoplive alle døde peds inden for 50m radius</p>
+        <p>- Air ambulance: Højere chance for genoplivning</p>
+        <p>- Coroner og animal control: Fjerner alle døde peds/animals inden for 50m radius</p>
+        <p>- Tow truck: Tager nærmeste bil væk (on foot) eller bilen foran dig (i MDT)</p>
+        <p>- Mechanic: Reparerer valgt bil</p>
+        <p>- Prison transport: Transporterer op til 2 arresterede peds (i MDT) eller nærmeste ped (on foot)</p>
+        <p>- Taxi: Henter nærmeste ped</p>
+
+        <h3>Blue Station Markers</h3>
+        <p>- Du kan sætte håndjernede peds i fængsel ved de blå station markers på kortet.</p>
+        <p>- Disse vises kun, når en arresteret ped er i bilen eller kontrolleret af en spiller.</p>
+    </div>
+</section>
+            </div>
+        </article>
+    
+
+
+
+<div>
+    <button id="backToTop">Tilbage til toppen ↑</button>
+
+    <script>
+        var backToTop = document.getElementById("backToTop");
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 1090) {
+                backToTop.style.opacity = "1";  // Make it visible
+                backToTop.style.pointerEvents = "auto"; // Enable clicking
+            } else {
+                backToTop.style.opacity = "0";  // Make it invisible
+                backToTop.style.pointerEvents = "none"; // Disable clicking
+            }
+        };
+
+        backToTop.onclick = function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+    </script>
+</div>
+
+<script>
+function openTab(tabId) {
+    const tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => tab.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+}
+</script>
+
+<!-- Ad placeholder example -->
+<div style="width:100%; height:200px; background-color:#2a2a2a; margin:rem 0; text-align:center; line-height:100px; color:#505050;">
+    Reklame
+</div>
+
+<footer id="footer">
+    <ul class="icons">
+        <li><a href="https://discord.gg/Sg6xEbeJXV" class="icon brands fa-discord"></a></li>
+        <li><a href="#" class="icon brands fa-youtube"></a></li>
+        <li><a href="#" class="icon brands fa-paypal"></a></li>
+    </ul>
+    <ul class="copyright">
+        <li>&copy; 2025 EES FivePD. Alle rettigheder forbeholdes </li>
+    </ul>
+</footer>
+    
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+	
+
+<script>
+    // JavaScript to handle button click and toggle information visibility
+    document.querySelectorAll('.team-btn').forEach(function(button) {
+        button.addEventListener('click', function() {
+            // Toggle 'active' class to show/hide the info
+            const info = this.nextElementSibling;
+            if (info.style.display === 'block') {
+                info.style.display = 'none';
+            } else {
+                info.style.display = 'block';
+            }
+        });
+    });
+</script>

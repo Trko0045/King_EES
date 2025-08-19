@@ -1,0 +1,345 @@
+<!DOCTYPE HTML>
+<head>
+    <title>EES FivePD - Server Status</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" type="image/png" sizes="96x96" href="images/icon.png" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<style>
+body {
+    background-color: rgba(0, 0, 0, 0); /* Ensures a dark base */
+    color: rgba(255, 255, 255, 0);
+     }
+    /* Full-screen video background */
+    #video-background {
+    pointer-events: none; /* Prevent clicks and interaction */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures video covers the entire screen */
+        z-index: -1; /* Sends video to the background */
+    }
+
+/* Wrapper default + online/offline */
+.wrapper {
+    height: 55vh;
+    background-color: rgba(165, 165, 165, 0.15);
+    padding: 60px 30px;
+    border-radius: 50px;
+    text-align: center;
+    margin: 150px auto 0 auto;
+    max-width: 47%;
+    color: rgb(237, 181, 53);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Wrapper colors based on status */
+.wrapper.online {
+    background-color: rgba(76, 175, 80, 0.3); /* Green */
+    color: #ffffff;
+}
+.wrapper.offline {
+    background-color: rgba(255, 59, 59, 0.3); /* Red */
+    color: #ffffff;
+}
+
+/* Status text */
+.status {
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 2;
+    position: relative;
+}
+
+/* Logo container */
+.status-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Responsive logo */
+.server-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20vw;       /* scales with viewport */
+    max-width: 160px;  /* won't grow too big */
+    height: auto;      /* keeps aspect ratio */
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+    /* Status Styling */
+    .status {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 60px; /* Increased margin to push text down */
+    }
+    .online {
+        color: #368e3a;
+    }
+    .offline {
+        color: #ba0000;
+    }
+
+    /* Header Styling with more contrast and background wrapper */
+    header#header {
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.7); /* Darker semi-transparent background for better contrast */
+        padding: 20px 0; /* Reduced padding for less space */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Shadow for contrast */
+        z-index: 10;
+    }
+
+
+
+    /* Header Text */
+    header#header h1 a {
+        color: #ffffff; /* White text for logo */
+        text-decoration: none;
+        text-shadow: 30px 1px 4px rgba(0, 0, 0, 0.6); /* Text shadow for better contrast */
+    }
+
+    header#header nav a {
+        color: #8f0000; /* Green color for links */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Text shadow for navigation links */
+    }
+
+    /* Footer Styling - Transparent */
+    footer#footer {
+        background-color: transparent; /* Transparent background */
+        padding: 10px 0; /* Smaller padding */
+        text-align: center;
+        font-size: 14px;
+        position: absolute; /* Fix footer at the bottom */
+        bottom: 0;
+        width: 100%;
+    }
+
+    footer#footer .icons {
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+    footer#footer .copyright {
+        margin-top: 10px;
+    }
+
+    /* Buttons styling for server status */
+    .status-buttons {
+        margin-top: 50px;
+    }
+
+    .status-buttons ul {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .status-buttons li {
+        list-style: none;
+        margin: 0 10px;
+    }
+
+    .status-buttons a.button {
+        padding: 1px 2px;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        border-radius: 50px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .status-buttons a.button.online {
+        background-color: #4CAF50;
+    }
+
+    .status-buttons a.button.offline {
+        background-color: #FF3B3B;
+    }
+
+    .status-buttons a.button:hover {
+        opacity: 0.8;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        /* Reduce wrapper height for smaller screens */
+        .wrapper {
+            height: auto;
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        .status {
+            font-size: 20px;
+        }
+
+        header#header .header-wrapper {
+            width: 90%; /* Reduce header width on small screens */
+        }
+
+        header#header h1 {
+            font-size: 24px;
+        }
+
+        /* Ensure that footer icons are stacked on smaller screens */
+        footer#footer .icons {
+            display: block;
+            margin: 10px 0;
+        }
+    }
+
+    @media (max-width: 480px) {
+        /* Further adjustments for very small screens (portrait phones) */
+        .wrapper {
+            padding: 15px;
+        }
+
+        .status {
+            font-size: 18px;
+        }
+
+        header#header h1 {
+            font-size: 22px;
+        }
+
+        header#header nav a {
+            font-size: 14px;
+        }
+
+        /* Move video more to the left and zoom it in */
+        #video-background {
+            left: 0; /* Keep video on the left */
+            transform: scale(1.2); /* Zoom in by 20% */
+            object-position: center; /* Focus on the left side of the video */
+        }
+    }
+	
+</style>
+
+
+</head>
+<body>
+    <!-- Video Background -->
+    <video id="video-background" autoplay muted loop playsinline webkit-playsinline>
+        <source src="assets/videos/bannerstatus.mp4" type="video/mp4">
+        <source src="assets/videos/bannerstatus.webm" type="video/webm">
+        <source src="assets/videos/bannerstatus.ogv" type="video/ogv">
+        Your browser does not support the video tag, but you can view our content in other formats.
+    </video>
+
+    <div id="page-wrapper">
+        <!-- Header -->
+        <header id="header" class="alt">
+            <div class="header-wrapper">
+                <h1 id="logo"><a href="hjem.html">EES FivePD</a></h1>
+                <nav id="nav">
+                    <ul>
+                    <li class="current"><a href="about.html">Server Status</a></li>
+                        <li><a href="hjem.html">Hjem</a></li>
+                        <li><a href="https://discord.gg/Sg6xEbeJXV" class="button">Join Discord</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+<!-- Server Status -->
+<section class="wrapper" style="position: relative;">
+    <h2>Server Status</h2>
+    <p>Live status for EES FivePD server</p>
+    
+    <!-- Container to hold status text and logo overlay -->
+    <div style="position: relative; display: inline-block;">
+        <!-- The logo overlay -->
+        <img src="images/server_icon.png" alt="Server Icon" 
+             style="
+                 position: absolute;
+                 top: 80%;
+                 left: 50%;
+                 width: 160px;
+                 height: 150px;
+                 transform: translate(-50%, -80%);
+                 opacity: 1.00;
+                 pointer-events: none;
+                 z-index: 1;
+             ">
+        <!-- Status text on top -->
+        <div class="status" id="server-status" 
+             style="position: relative; z-index: 2; font-size: 24px; font-weight: bold; color: #ffffff;">
+             Checking...
+        </div>
+    </div>
+    
+    <p id="player-count"></p>
+    
+    <!-- Button Section for server status -->
+    <div class="status-buttons">
+        <ul>
+            <li>
+                <a id="status-button" href="#" class="button">Checking...</a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+<footer id="footer">
+    <ul class="icons">
+        <li><a href="https://discord.gg/Sg6xEbeJXV" class="icon brands fa-discord"></a></li>
+        <li><a href="#" class="icon brands fa-youtube"></a></li>
+        <li><a href="#" class="icon brands fa-paypal"></a></li>
+    </ul>
+    <ul class="copyright">
+        <li>&copy; 2025 EES FivePD. Alle rettigheder forbeholdes </li>
+    </ul>
+</footer>
+
+    <!-- Scripts -->
+    <script>
+        async function fetchServerStatus() {
+            try {
+                const response = await fetch('https://servers-frontend.fivem.net/api/servers/single/ovzbz7');
+                const data = await response.json();
+                if (data && data.Data) {
+                    document.getElementById('server-status').innerHTML = "Online";
+                    document.getElementById('server-status').classList.add("online");
+                    document.getElementById('player-count').innerHTML = `Players Online: ${data.Data.players.length}/${data.Data.sv_maxclients}`;
+                    const button = document.getElementById('status-button');
+                    button.classList.remove('offline');
+                    button.classList.add('online');
+                    button.innerHTML = "Spil Nu";
+                    button.href = "https://cfx.re/join/8dylyb"; // Link for the server to play now
+                } else {
+                    throw new Error("No data");
+                }
+            } catch (error) {
+                document.getElementById('server-status').innerHTML = "Offline";
+                document.getElementById('server-status').classList.add("offline");
+                document.getElementById('player-count').innerHTML = "";
+                const button = document.getElementById('status-button');
+                button.classList.remove('online');
+                button.classList.add('offline');
+                button.innerHTML = "Utilgængelig"; // Offline status message
+                button.href = "#"; // Don't link if offline
+            }
+        }
+        fetchServerStatus();
+    </script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    </div>
+    </body>
